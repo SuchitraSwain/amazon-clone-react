@@ -7,7 +7,7 @@ import CurrencyFormate from "react-currency-format";
 
 function Checkout() {
   // get me the basket and dispatch
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket, user }, dispatch] = useStateValue();
 
   return (
     <div className="checkout">
@@ -17,6 +17,7 @@ function Checkout() {
           src="https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg"
           alt=""
         />
+        <h2>Hello, {!user ? "Guest" : user?.email}</h2>
 
         {basket?.length === 0 ? (
           <div>
